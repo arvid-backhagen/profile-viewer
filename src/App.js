@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       profiles: [],
-      searchValue: ""
+      searchValue: "",
     };
   }
   componentDidMount() {
@@ -21,7 +21,7 @@ class App extends React.Component {
         let newProfiles = [...this.state.profiles];
         newProfiles.push(response.data.results[0]);
         this.setState({
-          profiles: newProfiles
+          profiles: newProfiles,
         });
       })
       .catch(err => {
@@ -36,6 +36,8 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <div className="content-container">
+          <Route exact path="/" component={ProfileViewer} />
+          <Route exact path="/profile/:profileId" component={About} />
           <FilterBar searchChange={this.searchChange} />
           {this.state.profiles.map((profile, index) => {
             return (

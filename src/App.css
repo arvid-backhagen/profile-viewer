@@ -22,7 +22,6 @@
 
 .content-container {
   box-sizing: border-box;
-
   background-color: #282c34;
   height: calc(100% - 100px);
 }
@@ -45,6 +44,9 @@
   }
   .Header {
     padding: 0;
+  }
+  .content-container {
+    height: calc(100% - 50px);
   }
 }
 @media screen and (max-width: 670px) {

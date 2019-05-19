@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.13b41197.chunk.css",
-    "main.js": "/static/js/main.f473ab7a.chunk.js",
-    "main.js.map": "/static/js/main.f473ab7a.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.7fe71732.chunk.css": "/static/css/2.7fe71732.chunk.css",
-    "static/js/2.22de8b16.chunk.js": "/static/js/2.22de8b16.chunk.js",
-    "static/js/2.22de8b16.chunk.js.map": "/static/js/2.22de8b16.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.b3cbfad3014b0837d3fd7a7b65d48924.js": "/precache-manifest.b3cbfad3014b0837d3fd7a7b65d48924.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.7fe71732.chunk.css.map": "/static/css/2.7fe71732.chunk.css.map",
-    "static/css/main.13b41197.chunk.css.map": "/static/css/main.13b41197.chunk.css.map",
-    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+    "main.css": "/profile-viewer/static/css/main.13b41197.chunk.css",
+    "main.js": "/profile-viewer/static/js/main.f473ab7a.chunk.js",
+    "main.js.map": "/profile-viewer/static/js/main.f473ab7a.chunk.js.map",
+    "runtime~main.js": "/profile-viewer/static/js/runtime~main.38447ba4.js",
+    "runtime~main.js.map": "/profile-viewer/static/js/runtime~main.38447ba4.js.map",
+    "static/css/2.7fe71732.chunk.css": "/profile-viewer/static/css/2.7fe71732.chunk.css",
+    "static/js/2.22de8b16.chunk.js": "/profile-viewer/static/js/2.22de8b16.chunk.js",
+    "static/js/2.22de8b16.chunk.js.map": "/profile-viewer/static/js/2.22de8b16.chunk.js.map",
+    "index.html": "/profile-viewer/index.html",
+    "precache-manifest.e1207f5c6242a61148c7257a025dbbe7.js": "/profile-viewer/precache-manifest.e1207f5c6242a61148c7257a025dbbe7.js",
+    "service-worker.js": "/profile-viewer/service-worker.js",
+    "static/css/2.7fe71732.chunk.css.map": "/profile-viewer/static/css/2.7fe71732.chunk.css.map",
+    "static/css/main.13b41197.chunk.css.map": "/profile-viewer/static/css/main.13b41197.chunk.css.map",
+    "static/media/logo.svg": "/profile-viewer/static/media/logo.5d5d9eef.svg"
   }
 }

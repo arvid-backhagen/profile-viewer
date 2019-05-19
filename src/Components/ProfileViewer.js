@@ -94,6 +94,7 @@ class ProfileViewer extends React.Component {
             pageChange={this.pageChange}
             showFilters={this.props.showFilters}
             searchValue={this.state.searchValue}
+            isMobile={this.props.isMobile}
           />
         )}
 

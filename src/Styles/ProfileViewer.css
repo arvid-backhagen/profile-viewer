@@ -21,3 +21,8 @@
     padding: 0;
   }
 }
+@media screen and (max-width: 670px) {
+  .profile-container {
+    height: 100%;
+  }
+}

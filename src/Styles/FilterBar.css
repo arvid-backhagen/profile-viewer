@@ -5,13 +5,15 @@
   align-items: center;
   padding: 5px 10%;
 }
-.mobile {
+.FilterBar.mobile {
   position: absolute;
   right: 0;
   background-color: black;
   flex-direction: column;
   border-radius: 0 0 1em 1em;
   box-shadow: 3px 3px 9px 1px rgba(0, 0, 0, 0.75);
+  padding: 1em;
+  font-size: 0.6em;
 }
 .mobile > .gender-picker {
   flex-direction: row;
@@ -48,6 +50,6 @@
 }
 @media screen and (max-width: 1000px) {
   .FilterBar {
-    padding: 0;
+    padding: 5px 0;
   }
 }

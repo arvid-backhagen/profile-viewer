@@ -9,27 +9,16 @@ class FilterBar extends React.Component {
     this.state = {
       profiles: [],
       pages: [1, 2, 3, 4, 5],
-      isMobile: window.innerWidth < 670,
     };
   }
 
   componentDidMount() {
     this.searchInput.focus();
-    window.addEventListener("resize", this.isMobile);
   }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.isMobile);
-  }
-  isMobile = () => {
-    window.innerWidth < 670
-      ? this.setState({ isMobile: true })
-      : this.setState({ isMobile: false });
-  };
 
   render() {
     return (
-      <div className={"FilterBar" + (this.state.isMobile ? " mobile" : "")}>
+      <div className={"FilterBar" + (this.props.isMobile ? " mobile" : "")}>
         <input
           type="search"
           onChange={e => this.props.searchChange(e)}

@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showFilters: false,
+      showFilters: !(window.innerWidth < 670),
       isMobile: window.innerWidth < 670,
     };
   }
@@ -21,7 +21,7 @@ class App extends React.Component {
   isMobile = () => {
     window.innerWidth < 670
       ? this.setState({ isMobile: true })
-      : this.setState({ isMobile: false });
+      : this.setState({ isMobile: false, showFilters: true });
   };
   toggleFilters = () => {
     this.setState({ showFilters: !this.state.showFilters });
@@ -31,7 +31,10 @@ class App extends React.Component {
       <div className="App">
         <Header toggleFilters={this.toggleFilters} />
         <div className="content-container">
-          <ProfileViewer showFilters={this.state.showFilters} />
+          <ProfileViewer
+            isMobile={this.state.isMobile}
+            showFilters={this.state.showFilters}
+          />
         </div>
       </div>
     );

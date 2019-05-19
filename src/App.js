@@ -1,49 +1,37 @@
 import React from "react";
-import axios from "axios";
 import Header from "./Components/Header";
-import FilterBar from "./Components/FilterBar";
-import ProfileCard from "./Components/ProfileCard";
+import ProfileViewer from "./Components/ProfileViewer";
+
 import "./App.css";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      profiles: [],
-      searchValue: "",
+      showFilters: false,
+      isMobile: window.innerWidth < 670,
     };
   }
   componentDidMount() {
-    axios
-      .get("https://randomuser.me/api/?results=50")
-      .then(response => {
-        console.log(response);
-        let newProfiles = [...this.state.profiles];
-        newProfiles.push(response.data.results[0]);
-        this.setState({
-          profiles: newProfiles,
-        });
-      })
-      .catch(err => {
-        alert(err);
-      });
+    window.addEventListener("resize", this.isMobile);
   }
-  searchChange = e => {
-    this.setState({ searchValue: e.target.value });
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.isMobile);
+  }
+  isMobile = () => {
+    window.innerWidth < 670
+      ? this.setState({ isMobile: true })
+      : this.setState({ isMobile: false });
+  };
+  toggleFilters = () => {
+    this.setState({ showFilters: !this.state.showFilters });
   };
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header toggleFilters={this.toggleFilters} />
         <div className="content-container">
-          <Route exact path="/" component={ProfileViewer} />
-          <Route exact path="/profile/:profileId" component={About} />
-          <FilterBar searchChange={this.searchChange} />
-          {this.state.profiles.map((profile, index) => {
-            return (
-              <ProfileCard key={index} imageSrc={profile.picture.medium} />
-            );
-          })}
+          <ProfileViewer showFilters={this.state.showFilters} />
         </div>
       </div>
     );

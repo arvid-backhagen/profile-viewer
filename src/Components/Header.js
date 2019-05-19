@@ -1,11 +1,14 @@
 import React from "react";
 import logo from "../Assets/logo.svg";
+import { TiThMenu } from "react-icons/ti";
 
-function Header() {
+function Header(props) {
   return (
     <header className="Header">
       <img src={logo} className="App-logo" alt="logo" />
-      <div>Header</div>
+
+      <div>Profiles</div>
+      <TiThMenu className="hamburger" onClick={props.toggleFilters} />
     </header>
   );
 }

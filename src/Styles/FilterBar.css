@@ -1,0 +1,53 @@
+.FilterBar {
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  align-items: center;
+  padding: 5px 10%;
+}
+.mobile {
+  position: absolute;
+  right: 0;
+  background-color: black;
+  flex-direction: column;
+  border-radius: 0 0 1em 1em;
+  box-shadow: 3px 3px 9px 1px rgba(0, 0, 0, 0.75);
+}
+.mobile > .gender-picker {
+  flex-direction: row;
+}
+.search-bar {
+  border: none;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  font-size: 1.4em;
+  background-color: transparent;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+}
+.search-bar:focus {
+  outline: none;
+  background-color: #ffffff;
+}
+.gender-picker {
+  display: flex;
+  flex-direction: column;
+}
+.gender-picker > label:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+.gender-radio:hover {
+  cursor: pointer;
+}
+.rc-pagination-item-active {
+  background-color: #61dafb;
+  border-color: #61dafb;
+}
+.rc-pagination > li:focus {
+  outline: none;
+}
+@media screen and (max-width: 1000px) {
+  .FilterBar {
+    padding: 0;
+  }
+}

@@ -1,20 +1,87 @@
 import React from "react";
+import Pagination from "rc-pagination";
 
+import "rc-pagination/assets/index.css";
+import "../Styles/FilterBar.css";
 class FilterBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      profiles: []
+      profiles: [],
+      pages: [1, 2, 3, 4, 5],
+      isMobile: window.innerWidth < 670,
     };
   }
-  componentDidMount() {}
+
+  componentDidMount() {
+    this.searchInput.focus();
+    window.addEventListener("resize", this.isMobile);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.isMobile);
+  }
+  isMobile = () => {
+    window.innerWidth < 670
+      ? this.setState({ isMobile: true })
+      : this.setState({ isMobile: false });
+  };
+
   render() {
     return (
-      <div className="FilterBar">
+      <div className={"FilterBar" + (this.state.isMobile ? " mobile" : "")}>
         <input
-          type="text"
+          type="search"
           onChange={e => this.props.searchChange(e)}
           className="search-bar"
+          placeholder="Search..."
+          value={this.props.searchValue}
+          ref={input => {
+            this.searchInput = input;
+          }}
+        />
+
+        <form action="" className="gender-picker">
+          <label>
+            <input
+              className="gender-radio"
+              type="radio"
+              name="gender"
+              value="none"
+              checked={this.props.selectedOption === "none"}
+              onChange={this.props.handleOptionChange}
+            />
+            All
+          </label>
+          <label>
+            <input
+              className="gender-radio"
+              type="radio"
+              name="gender"
+              value="male"
+              checked={this.props.selectedOption === "male"}
+              onChange={this.props.handleOptionChange}
+            />
+            Male
+          </label>
+          <label>
+            <input
+              className="gender-radio"
+              type="radio"
+              name="gender"
+              value="female"
+              checked={this.props.selectedOption === "female"}
+              onChange={this.props.handleOptionChange}
+            />
+            Female
+          </label>
+        </form>
+
+        <Pagination
+          current={this.props.page}
+          onChange={this.props.pageChange}
+          total={200}
+          pageSize={40}
         />
       </div>
     );

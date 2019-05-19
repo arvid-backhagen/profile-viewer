@@ -1,0 +1,26 @@
+.ProfileCard {
+  padding: 1em;
+  margin: 1em 4px;
+  text-align: center;
+  width: 162px;
+  color: rgb(231, 231, 231);
+  cursor: pointer;
+}
+.ProfileCard:hover > .name-container {
+  font-weight: bold;
+}
+.ProfileCard:hover > .thumbnail {
+  box-shadow: 3px 3px 9px 1px rgba(197, 197, 197, 0.75);
+}
+.thumbnail {
+  border-radius: 100%;
+  box-shadow: 3px 3px 9px 1px rgba(0, 0, 0, 0.75);
+}
+.name-container {
+  padding-top: 1em;
+}
+
+@media screen and (max-width: 600px) {
+  .ProfileCard {
+  }
+}

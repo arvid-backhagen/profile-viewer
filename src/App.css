@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -9,21 +11,45 @@
 }
 
 .Header {
-  background-color: #282c34;
+  background-color: #000000;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 3vmin);
   color: white;
-  padding: 0 10vw;
+  padding: 0 20%;
 }
 
+.content-container {
+  box-sizing: border-box;
+
+  background-color: #282c34;
+  height: calc(100% - 100px);
+}
+.hamburger {
+  display: none;
+  margin-left: auto;
+  margin-right: 20px;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 1400px) {
+  .Header {
+    padding: 0 10%;
+  }
+}
 @media screen and (max-width: 1000px) {
   .App-logo {
     height: 50px;
   }
   .Header {
     padding: 0;
+  }
+}
+@media screen and (max-width: 670px) {
+  .hamburger {
+    display: block;
   }
 }
 

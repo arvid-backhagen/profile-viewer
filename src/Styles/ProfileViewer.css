@@ -1,0 +1,23 @@
+.ProfileViewer {
+  box-sizing: border-box;
+  height: 100%;
+}
+.profile-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  height: calc(100% - 70px);
+  padding: 0 20%;
+}
+
+@media screen and (max-width: 1400px) {
+  .profile-container {
+    padding: 0 10%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .profile-container {
+    padding: 0;
+  }
+}

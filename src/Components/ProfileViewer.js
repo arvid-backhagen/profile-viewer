@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "axios";
 import Zoom from "react-reveal/Zoom";
+import debounce from "lodash.debounce";
 
 import ProfileCard from "./ProfileCard";
 import FilterBar from "./FilterBar";
 import Profile from "./Profile";
 import OutsideClick from "./OutsideClick";
-
 import "../Styles/ProfileViewer.css";
 
 function isThere(a_string, in_this_object) {
@@ -20,7 +20,7 @@ function isThere(a_string, in_this_object) {
         return true;
       }
     } else if (typeof in_this_object[key] === "string") {
-      if (a_string === in_this_object[key]) {
+      if (in_this_object[key].toUpperCase().includes(a_string.toUpperCase())) {
         return true;
       }
     }
@@ -37,6 +37,7 @@ class ProfileViewer extends React.Component {
       searchValue: "",
       selectedGender: "none",
     };
+    this.searchChange = debounce(this.searchChange, 300, { maxWait: 3000 });
   }
   componentDidMount() {
     this.getProfiles();

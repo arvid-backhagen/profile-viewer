@@ -37,13 +37,13 @@ class ProfileViewer extends React.Component {
       searchValue: "",
       selectedGender: "none",
     };
-    this.searchChange = debounce(this.searchChange, 300, { maxWait: 3000 });
+    this.searchChange = debounce(this.searchChange, 300);
   }
   componentDidMount() {
     this.getProfiles();
   }
-  searchChange = e => {
-    this.setState({ searchValue: e.target.value });
+  searchChange = target => {
+    this.setState({ searchValue: target.value });
   };
   pageChange = newPage => {
     this.setState({ currentPage: newPage }, () => this.getProfiles());

@@ -14,6 +14,9 @@ class FilterBar extends React.Component {
 
   componentDidMount() {
     this.searchInput.focus();
+    if (this.props.searchValue) {
+      this.searchInput.value = this.props.searchValue;
+    }
   }
 
   render() {
@@ -21,10 +24,9 @@ class FilterBar extends React.Component {
       <div className={"FilterBar" + (this.props.isMobile ? " mobile" : "")}>
         <input
           type="search"
-          onChange={e => this.props.searchChange(e)}
+          onChange={e => this.props.searchChange(this.searchInput, e)}
           className="search-bar"
           placeholder="Search..."
-          value={this.props.searchValue}
           ref={input => {
             this.searchInput = input;
           }}

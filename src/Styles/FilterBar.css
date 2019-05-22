@@ -19,7 +19,6 @@
   flex-direction: row;
 }
 .search-bar {
-  border: none;
   padding: 0.5em 0.5em 0.5em 0.5em;
   font-size: 1.4em;
   background-color: transparent;
@@ -28,6 +27,9 @@
 }
 .search-bar:focus {
   outline: none;
+  background-color: #ffffff;
+}
+.search-bar:not(:placeholder-shown) {
   background-color: #ffffff;
 }
 .gender-picker {

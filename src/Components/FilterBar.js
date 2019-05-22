@@ -7,7 +7,6 @@ class FilterBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      profiles: [],
       pages: [1, 2, 3, 4, 5],
     };
   }
@@ -16,6 +15,7 @@ class FilterBar extends React.Component {
     this.searchInput.focus();
     if (this.props.searchValue) {
       this.searchInput.value = this.props.searchValue;
+      this.searchInput.style.backgroundColor = "white";
     }
   }
 

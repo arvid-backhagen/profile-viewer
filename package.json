@@ -4,7 +4,7 @@
   "homepage": "https://arvidlarzzon.github.io/profile-viewer",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "gh-pages": "^2.0.1",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.7.2",
